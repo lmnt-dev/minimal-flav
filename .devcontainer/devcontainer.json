@@ -1,0 +1,66 @@
+{
+  "name": "phusebox",
+  "dockerComposeFile": "docker-compose.yml",
+  "forwardPorts": [8080, 3306],
+  "postCreateCommand": ".devcontainer/docker-post-create.sh",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+    "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
+    "ghcr.io/devcontainers-contrib/features/yt-dlp:2": {},
+    "ghcr.io/devcontainers-contrib/features/zig:1": {},
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "plugins": "history zsh-autosuggestions"
+    },
+    "ghcr.io/dhoeric/features/act:1": {},
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/jungaretti/features/ripgrep:1": {},
+    "ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mjbvz.vscode-markdown-mermaid",
+        "unifiedjs.vscode-mdx"
+      ],
+      "settings": {
+        "editor.bracketPairColorization.enabled": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true,
+          "source.fixAll.stylelint": true
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.guides.bracketPairs": "active",
+        "editor.quickSuggestions": {
+          "strings": true
+        },
+        "editor.stickyScroll.enabled": true,
+        "editor.tabSize": 2,
+        "files.eol": "\n",
+        "files.exclude": {
+          "**/.cache": true,
+          "**/.eslintcache": true
+        },
+        "php.suggest.basic": false,
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "workbench.startupEditor": "readme"
+      }
+    }
+  }
+}

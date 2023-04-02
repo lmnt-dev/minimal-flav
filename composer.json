@@ -1,0 +1,21 @@
+{
+  "autoload": {
+    "files": [
+      "lib/index.php"
+    ],
+    "psr-4": {
+      "sql\\": "sql/",
+      "ui\\": "ui/"
+    }
+  },
+  "config": {
+    "process-timeout": 0
+  },
+  "require-dev": {
+    "robmorgan/phinx": "^0.13.4"
+  },
+  "scripts": {
+    "start": "php -S localhost:8080 boot.php",
+    "migrate": "phinx migrate -c config/phinx.php"
+  }
+}
